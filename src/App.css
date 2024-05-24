@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ededea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.todo-container {
+  background-color: #b6dff1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px; /* Adjusted to allow more space */
+  transform-origin: center center;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Ensure inputs wrap on smaller screens */
+}
+
+input[type="text"], .react-datepicker__input-container input, .search-container input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.react-datepicker-wrapper {
+  width: auto;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #a297e8;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #7787c43d;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item span {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.todo-item .todo-date {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #555;
+}
+
+.todo-item button {
+  background-color: #dc3545;
+}
+
+.todo-item button:hover {
+  background-color: #c82333;
+}
+
+.completion-message {
+  text-align: center;
+  margin-top: 20px;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.zoom {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.zoom button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.date-picker {
+  margin-left: 10px;
+}
+
+.date-picker-container {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+@media (min-width: 1200px) {
+  .todo-container {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .todo-container {
+    max-width: 80%;
+  }
+
+  .date-picker-container {
+    right: 20px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .todo-container {
+    max-width: 90%;
+  }
+
+  .zoom {
+    top: 20px;
+    right: 20px;
+  }
+
+  .date-picker-container {
+    right: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .todo-container {
+    max-width: 95%;
+  }
+
+  .input-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .zoom {
+    top: 20px;
+    right: 20px;
+  }
+
+  .date-picker-container {
+    right: 20px;
+  }
+}

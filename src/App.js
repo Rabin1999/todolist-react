@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Todo from './Todo';
 import './App.css';
+// import Cale from './Cale';
 
 
 function App() {
   return (
     <>
-    <h1> hii i am mitan</h1>
+    {/* <Cale /> */}
+    < Todo />
     </>
   );
 }
